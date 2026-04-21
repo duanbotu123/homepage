@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="李光昊 - 北京师范大学数学与应用数学 | 个人主页">
+    <title>李光昊 - 数学与应用数学</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80' x='5' dominant-baseline='middle'%3E📐%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Design System - CSS Variables */
+        :root {
+            --background: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555555;
+            --text-muted: #999999;
+            --accent: #0066ff;
+            --divider: #eeeeee;
+            --max-width: 680px;
+            --padding: 20px;
+            --section-spacing: 56px;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', 'Newsreader', Georgia, serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .display-name {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+        }
+
+        .location {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+        }
+
+        .bio {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        .date {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            flex-shrink: 0;
+        }
+
+        .company {
+            font-weight: 600;
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            font-size: 16px;
+        }
+
+        .role {
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-top: 2px;
+            font-size: 15px;
+        }
+
+        .description {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-top: 6px;
+            line-height: 1.7;
+        }
+
+        .description em {
+            font-style: normal;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .project-name {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .project-description {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 12px;
+            color: var(--text-muted);
+            background-color: #f5f5f5;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+        }
+
+        .link {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        /* Score grid */
+        .score-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 24px;
+        }
+
+        .score-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 6px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .score-item .course-name {
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        .score-item .course-score {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+        }
+
+        .gpa-highlight {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .gpa-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            line-height: 1;
+        }
+
+        .gpa-total {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        /* Contact inline */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .contact-item .contact-icon {
+            font-size: 16px;
+            width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--padding);
+        }
+
+        .header {
+            padding: 60px 0 40px;
+            text-align: left;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        .section {
+            margin-bottom: var(--section-spacing);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--divider);
+            margin: 0 0 var(--section-spacing);
+        }
+
+        .timeline-item {
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+
+        .project-card {
+            padding: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-card:hover {
+            opacity: 0.85;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 24px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--divider);
+        }
+
+        .social-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .social-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: #fff;
+                color: #000;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            .header {
+                padding: 20px 0;
+            }
+            
+            .section {
+                margin-bottom: 30px;
+            }
+            
+            .divider {
+                margin: 0 0 30px;
+            }
+            
+            .social-links {
+                display: none;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .display-name {
+                font-size: 28px;
+            }
+            
+            .section-heading {
+                font-size: 11px;
+            }
+            
+            .title {
+                font-size: 16px;
+            }
+            
+            .bio {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+            
+            .score-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --section-spacing: 40px;
+            }
+            
+            .display-name {
+                font-size: 26px;
+            }
+            
+            .container {
+                padding: 16px;
+            }
+            
+            .header {
+                padding: 40px 0 30px;
+            }
+
+            .gpa-number {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="avatar">📐</div>
+            <h1 class="display-name">李光昊</h1>
+            <p class="title">数学与应用数学</p>
+            <p class="location">北京师范大学 · 2021–2025</p>
+        </header>
+
+        <main>
+            <section class="section" id="about">
+                <h2 class="section-heading">关于</h2>
+                <p class="bio">
+                    北京师范大学数学与应用数学专业在读，具备扎实的数学功底与优秀的学业成绩。热爱教学与知识分享，在数学建模、AI 工具应用和视频创作方面有丰富的实践经验。善于将复杂问题拆解、运用技术工具辅助分析与表达。
+                </p>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section" id="education">
+                <h2 class="section-heading">教育</h2>
+                <div class="timeline-item">
+                    <div class="timeline-item-header">
+                        <h3 class="company">北京师范大学</h3>
+                        <span class="date">2021 – 2025</span>
+                    </div>
+                    <p class="role">数学与应用数学 · 学士学位</p>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section" id="academics">
+                <h2 class="section-heading">学业成绩</h2>
+                <div class="gpa-highlight">
+                    <span class="gpa-number">82.02</span>
+                    <span class="gpa-total">/ 100 平均学分绩</span>
+                </div>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <span class="course-name">组合数学</span>
+                        <span class="course-score">100</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="course-name">复变函数</span>
+                        <span class="course-score">93</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="course-name">抽象代数</span>
+                        <span class="course-score">91</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="course-name">常微分方程</span>
+                        <span class="course-score">91</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="course-name">数学分析 I</span>
+                        <span class="course-score">89</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="course-name">微分几何</span>
+                        <span class="course-score">88</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="course-name">综合编程</span>
+                        <span class="course-score">87</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="course-name">高等代数 II</span>
+                        <span class="course-score">86</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="course-name">偏微分方程</span>
+                        <span class="course-score">85</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section" id="experience">
+                <h2 class="section-heading">校园经历</h2>
+                <div class="timeline-item">
+                    <h3 class="company">未来教师大赛</h3>
+                    <p class="description">
+                        运用合适的教具（口袋与球），让学生更清晰和直观地理解集合的概念；融合更为深入的定理（容斥原理），让学有余力的同学可以进一步加深理解。
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="company">数学建模竞赛</h3>
+                    <p class="description">
+                        运用 X-mind 生成思维导图拆解问题；运用 Vensim 完成对建模的系统动力学研究；运用 MATLAB 进行模型优化，并使模拟结果直观表示；完成和文书编辑同学的沟通工作。
+                    </p>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section" id="skills">
+                <h2 class="section-heading">技能与项目</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3 class="project-name">数学教学</h3>
+                        <p class="project-description">扎实的数学功底，善于将抽象概念通过直观方式讲解，具备教学竞赛经验。</p>
+                        <div>
+                            <span class="tag">组合数学</span>
+                            <span class="tag">抽象代数</span>
+                            <span class="tag">微分方程</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-name">AI 工具的使用与探索</h3>
+                        <p class="project-description">擅长使用 Stable Diffusion 生成图片，能灵活运用 ControlNet 插件生成高分辨率的指定姿势、指定动作、人物细节无错误的图片；运用 GPT-SoVITS、Suno 生成配音及音乐。</p>
+                        <div>
+                            <span class="tag">Stable Diffusion</span>
+                            <span class="tag">ControlNet</span>
+                            <span class="tag">GPT-SoVITS</span>
+                            <span class="tag">Suno</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-name">视频剪辑</h3>
+                        <p class="project-description">B 站视频累计播放量超 30 万，具备视频策划、剪辑与发布的完整经验。</p>
+                        <div>
+                            <span class="tag">视频创作</span>
+                            <span class="tag">内容运营</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="section" id="languages">
+                <h2 class="section-heading">语言能力</h2>
+                <div class="timeline-item">
+                    <div class="timeline-item-header">
+                        <h3 class="company">英语</h3>
+                        <span class="date">CET-6 · 459</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <footer class="social-links">
+                <a href="tel:13561453670" class="social-link">
+                    <span class="contact-icon">📱</span> 135-6145-3670
+                </a>
+                <a href="mailto:1909631936@qq.com" class="social-link">
+                    <span class="contact-icon">✉️</span> 1909631936@qq.com
+                </a>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
